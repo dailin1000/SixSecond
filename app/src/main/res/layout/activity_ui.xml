@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/big_container"
+    android:background="@drawable/background05"
+    tools:context="com.sixmediaplayer.www.UIActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/small_container"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3fff"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/show_pic_normal"/>
+
+        <LinearLayout
+            android:id="@+id/ui_linear"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCurrentMusic"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:textSize="22dp"
+                android:textColor="@color/text_theme"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:text="歌名1111111111111111111111111" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:textSize="14dp"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textColor="@color/text_theme"
+                android:text="歌手名123456" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnStartStop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/player_play"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
+            android:id="@+id/btnNext"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/player_next" />
+    </LinearLayout>
+</RelativeLayout>

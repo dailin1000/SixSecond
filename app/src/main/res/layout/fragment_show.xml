@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sixmediaplayer.www.fragmnets.head.ShowFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ic_launcher" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="多媒体播放器"
+            android:textColor="@color/text_theme"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginRight="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/show_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/show_radionbutton0"
+                style="@style/ui_radiobutton"
+                android:text="111" />
+
+            <RadioButton
+                android:id="@+id/show_radionbutton1"
+                style="@style/ui_radiobutton"
+                android:text="111" />
+
+            <RadioButton
+                android:id="@+id/show_radionbutton2"
+                style="@style/ui_radiobutton"
+                android:text="111" />
+
+            <RadioButton
+                android:id="@+id/show_radionbutton3"
+                style="@style/ui_radiobutton"
+                android:text="111" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:id="@+id/showfragment_viewpager"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginBottom="50dp"/>
+</LinearLayout>
