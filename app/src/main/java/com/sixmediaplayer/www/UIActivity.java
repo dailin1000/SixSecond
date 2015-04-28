@@ -1,8 +1,10 @@
 package com.sixmediaplayer.www;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
@@ -13,9 +15,12 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -26,6 +31,7 @@ import com.sixmediaplayer.www.interfaces.OnFragmentInteractionListener;
 import com.sixmediaplayer.www.utils.music.MusicLoader;
 import com.sixmediaplayer.www.MusicService.NatureBinder;
 
+import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +74,68 @@ public class UIActivity extends FragmentActivity implements
     }
 
 
+    public void onMenuRadioButtonClick(){
+        RadioGroup menu_radiogroup = (RadioGroup) findViewById(R.id.menu_radiogroup);
+        menu_radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.menu_button_set_model:
+                        PopupWindow popupWindow = new PopupWindow(UIActivity.this);
+                        DisplayMetrics metrics=new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                        int w = metrics.widthPixels;
+                        int h = metrics.heightPixels;
+                        int width=w/5*4;
+                        int heigth=h/4*3;
+                        popupWindow.setWidth(width);
+                        popupWindow.setHeight(heigth);
+                        View v = getLayoutInflater().inflate(R.layout.activity_menu_set, null);
+                        popupWindow.setContentView(v);
+                        popupWindow.setFocusable(true);
+                        popupWindow.setOutsideTouchable(true);
+                        popupWindow.showAtLocation(v, Gravity.CENTER,0,0);
+
+                        break;
+                    case R.id.menu_button_night_model:
+
+                        break;
+                    case R.id.menu_button_sleep_model:
+
+                        break;
+                    case R.id.menu_button_change_backgroup:
+
+                        break;
+
+
+                    case R.id.menu_button_exit:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(UIActivity.this);
+                        AlertDialog dialog = builder.setTitle("操作")
+                                .setIcon(R.drawable.ic_launcher)
+                                .setMessage("确认退出应用程序吗？")
+                                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                        System.exit(0);
+                                    }
+                                })
+                                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .create();
+                        dialog.show();
+                        break;
+
+                }
+            }
+        });
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +150,8 @@ public class UIActivity extends FragmentActivity implements
         musicList = (ArrayList<MusicLoader.MusicInfo>) musicLoader.getMusicList();
         connectToNatureService();
         initComponents();
+        //侧滑菜单功能
+        onMenuRadioButtonClick();
     }
 
     @Override

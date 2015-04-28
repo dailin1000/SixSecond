@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5FFFA"
+    android:background="@drawable/menu_backgroup"
     android:orientation="vertical"
     >
     <TextView
@@ -22,6 +22,7 @@
         android:layout_weight="1"
         android:scrollbars="none"
         >
+
         <RadioGroup
             android:id="@+id/menu_radiogroup"
             android:layout_width="wrap_content"
@@ -29,53 +30,36 @@
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             >
-            <Button
-                android:id="@+id/menu_radiobutton1"
+            <RadioButton
+                android:id="@+id/menu_button_set_model"
                 style="@style/menu_grid_button"
                 android:text="@string/menu_set_model"
+
                 />
-            <Button
-                android:id="@+id/menu_radiobutton2"
+            <RadioButton
+                android:id="@+id/menu_button_night_model"
                 style="@style/menu_grid_button"
                 android:text="@string/menu_night_model"
                 />
-            <Button
-                android:id="@+id/menu_radiobutton3"
+            <RadioButton
+                android:id="@+id/menu_button_sleep_model"
                 style="@style/menu_grid_button"
                 android:text="@string/menu_sleep_model"
                 />
-            <Button
-                android:id="@+id/menu_radiobutton4"
+            <RadioButton
+                android:id="@+id/menu_button_change_backgroup"
                 style="@style/menu_grid_button"
                 android:text="@string/menu_change_backgroup"
                 />
-            <Button
-                android:id="@+id/menu_radiobutton5"
+            <RadioButton
+                android:id="@+id/menu_button_exit"
                 style="@style/menu_grid_button"
-                android:text="HHH"
-                />
-            <Button
-                android:id="@+id/menu_radiobutton6"
-                style="@style/menu_grid_button"
-                android:text="HHH"
-                />
-            <Button
-                android:id="@+id/menu_radiobutton7"
-                style="@style/menu_grid_button"
-                android:text="HHH"
-                />
-            <Button
-                android:id="@+id/menu_radiobutton8"
-                style="@style/menu_grid_button"
-                android:text="HHH"
-                />
-            <Button
-                android:id="@+id/menu_radiobutton9"
-                style="@style/menu_grid_button"
-                android:text="HHH"
+                android:text="@string/menu_exit"
                 />
 
+
         </RadioGroup>
+
 
     </ScrollView>
 

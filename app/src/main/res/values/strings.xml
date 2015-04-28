@@ -84,12 +84,13 @@
     <string name="menu_night_model">夜间模式</string>
     <string name="menu_sleep_model">睡眠模式</string>
     <string name="menu_change_backgroup">更换皮肤</string>
+    <string name="menu_exit">退出</string>
 
     <style name="menu_grid_button">
         <item name="android:drawableLeft">@drawable/ic_launcher</item>
-        <item name="android:background">@null</item>
+        <item name="android:button">@null</item>
         <item name="android:layout_marginTop">30dp</item>
-        <item name="android:drawablePadding">30dp</item>
+        <item name="android:drawablePadding">50dp</item>
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
